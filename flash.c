@@ -23,8 +23,7 @@ void setup(uint cs){
     gpio_set_dir(cs_pin, GPIO_OUT);
 }
 
-
-//void get_id(uint64_t ID) {
+// code to get the serial ID
 void get_id() {
     uint8_t ID_BUF[5];
     uint8_t SixFour_ID[64];
@@ -38,7 +37,6 @@ void get_id() {
     spi_write_blocking(Flash_SPI, ID_BUF, 5);
     spi_read_blocking(Flash_SPI, 0 ,SixFour_ID, 64);
 
-    printf("made it this far");
     for ( int i = 0; i < 64; i++) {
         printf("%02x", SixFour_ID[i]);
     }
@@ -50,7 +48,7 @@ void get_id() {
 
 int main() {
     stdio_init_all();
-    sleep_ms(12000);
+    sleep_ms(12000); // time to get minicom up
     printf("SPI flash example\n");
     sleep_ms(100);
     setup(Flash_CS);
