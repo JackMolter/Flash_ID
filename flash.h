@@ -3,10 +3,10 @@
 
 
 
-// pins
+// pins for the Data Flash chip on the OBC (spi0)
 #define Flash_SPI spi0
 #define Flash_MOSI 3
-#define Flash_MISO 0 //4
+#define Flash_MISO 0 
 #define Flash_CS 1
 #define Flash_SCK 2 
 
