@@ -3,6 +3,7 @@
 #define FLASH_PAGE_SIZE 256
 #define FLASH_SECTOR_SIZE 4096
 #define Random_Data_Size 256
+#define FLASH_CS_DELAY 100 // us
 // __not_in_flash_func means a function wont be stored in flash 
 
 // pins
@@ -57,3 +58,11 @@ void __not_in_flash_func(flash_erase_64k)(uint32_t addr);
 
 // chip erase
 void __not_in_flash_func(flash_erase_chip)();
+
+// DMA stuff
+// check if busy
+int __not_in_flash_func(check_busy)();
+static inline void __not_in_flash_func(dma_done_handle)();
+int64_t __not_in_flash_func(cs_alarm)();
+
+void __not_in_flash_func(dma_do_stuff)();
