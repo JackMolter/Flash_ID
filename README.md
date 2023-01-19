@@ -5,3 +5,5 @@ read
 write
 erase
 
+This code is simular to flash_testing in the OBC repo.
+
